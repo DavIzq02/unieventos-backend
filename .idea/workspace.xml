@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf19ac75-dce1-4b31-9c5b-f512c805d36f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/PermisoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/Permiso.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/PermisoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/GitService.java" afterDir="false" />
+    <list default="true" id="bf19ac75-dce1-4b31-9c5b-f512c805d36f" name="Changes" comment="+Encriptacion de contraseña &#10;+Division de logica al cargar los archivos al repo de gir &#10;+Se aumenta el size de archivos que cargan por el post">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/TipoDeEventoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/TipoDeEvento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/TipoDeEventoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/ComunidadRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/ComunidadRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/RolRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/RolRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/UsuarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/UsuarioService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -66,21 +61,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.UnieventosApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Admin/Desktop/Unieventos/backend",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.UnieventosApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/Unieventos/backend&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.unieventos.controllers" />
+      <recent name="com.example.unieventos.repositories" />
+      <recent name="com.example.unieventos.models" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="backend" />
@@ -148,13 +150,41 @@
       <option name="project" value="LOCAL" />
       <updated>1775343451581</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="+Encriptacion de contraseña &#10;+Division de logica al cargar los archivos al repo de gir &#10;+Se aumenta el size de archivos que cargan por el post">
+      <option name="closed" value="true" />
+      <created>1776227330808</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1776227330808</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -165,6 +195,17 @@
                   <entry key="Show.Git.Branches" value="false" />
                 </map>
               </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
             </State>
           </value>
         </entry>
@@ -173,6 +214,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Se cambio el token de git" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se cambio el token de git" />
+    <MESSAGE value="+Encriptacion de contraseña &#10;+Division de logica al cargar los archivos al repo de gir &#10;+Se aumenta el size de archivos que cargan por el post" />
+    <option name="LAST_COMMIT_MESSAGE" value="+Encriptacion de contraseña &#10;+Division de logica al cargar los archivos al repo de gir &#10;+Se aumenta el size de archivos que cargan por el post" />
   </component>
 </project>

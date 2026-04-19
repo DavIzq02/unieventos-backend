@@ -54,7 +54,7 @@ public class UsuarioService {
                 new RuntimeException("Usuario no existe")
         );
 
-        if (!usuario.getContrasena().equals(contrasena)) {
+        if (!passwordEncoder.matches(contrasena, usuario.getContrasena())) {
             throw new RuntimeException("Contraseña incorrecta");
         }
 

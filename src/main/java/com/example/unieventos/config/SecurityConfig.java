@@ -9,11 +9,12 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class SecurityConfig {
-    //Para hasear las contraseñas
+    //Para hashear las contraseñas
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
     //Para permitir acceso a endpoints
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
