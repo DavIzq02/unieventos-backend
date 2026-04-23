@@ -71,6 +71,7 @@ public class UsuarioController {
         }
 
     }
+
     @PostMapping("/createPostLogin")
     public ApiResponse<Usuario> createPostLogin(
             @RequestPart("data") Usuario nuevoUsuario,
@@ -84,4 +85,52 @@ public class UsuarioController {
         }
     }
 
+    @PutMapping("/update")
+    public ApiResponse<Usuario> updateUsuario(
+            @RequestBody Usuario usuarioModificado
+    ) throws IOException {
+        try {
+            usuarioService.updateUsuario(usuarioModificado);
+            return new ApiResponse<>(200, "OK", null);
+        } catch (Exception e) {
+            return new ApiResponse<>(500, e.getMessage(), null);
+        }
+    }
+
+    @PutMapping("/cambiar-estado")
+    public ApiResponse<Usuario> cambiarEstado(
+            @RequestBody Usuario usuarioModificado
+    ) throws IOException {
+        try {
+            Integer result = usuarioService.cambiarEstadoUsuario(usuarioModificado.getId(),usuarioModificado.getActivo());
+            return new ApiResponse<>(result, "OK", null);
+        } catch (Exception e) {
+            return new ApiResponse<>(500, e.getMessage(), null);
+        }
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ApiResponse<Usuario> delete(
+            @PathVariable("id") Integer idUsuario
+    ) throws IOException {
+        try {
+            Integer result = usuarioService.deleteUsuario(idUsuario);
+            return new ApiResponse<>(result, "OK", null);
+        } catch (Exception e) {
+            return new ApiResponse<>(500, e.getMessage(), null);
+        }
+    }
+
+    @PostMapping("/updateFotoPerfil")
+    public ApiResponse<Usuario> updateFotoPerfil(
+            @RequestPart("data") Usuario usuario,
+            @RequestPart(value = "imagen", required = false) MultipartFile imagen
+    ) throws IOException {
+        try {
+            Integer result = usuarioService.updateFotoPerfil(usuario, imagen);
+            return new ApiResponse<>(result, "OK", null);
+        } catch (Exception e) {
+            return new ApiResponse<>(500, e.getMessage(), null);
+        }
+    }
 }
