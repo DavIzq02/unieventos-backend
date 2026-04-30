@@ -1,13 +1,7 @@
 package com.example.unieventos.services;
 
-import com.example.unieventos.config.SecurityConfig;
 import com.example.unieventos.models.Rol;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +11,6 @@ import java.util.*;
 
 import com.example.unieventos.models.Usuario;
 import com.example.unieventos.repositories.UsuarioRepository;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
 @Service

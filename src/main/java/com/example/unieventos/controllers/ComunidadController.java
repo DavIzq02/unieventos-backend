@@ -5,14 +5,12 @@ import com.example.unieventos.dto.ApiResponse;
 import com.example.unieventos.models.Comunidad;
 import com.example.unieventos.repositories.ComunidadRepository;
 import java.util.List;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import org.springframework.web.bind.annotation.*;
 
 @RestController //Convierte a Json
 @RequestMapping("/api/comunidad") //url base del rest
+@CrossOrigin(origins = "*", allowedHeaders = "*") //permitir conexion de diferentes puertos
 public class ComunidadController {
     
     private final ComunidadRepository comunidadRepository;
@@ -25,9 +23,9 @@ public class ComunidadController {
     public ApiResponse<Comunidad> listar() {
         List<Comunidad> listaComunidades =  comunidadRepository.findAll();
         if(listaComunidades.isEmpty()){
-            return new ApiResponse<>(400, "Sin Resultados", null); 
+            return ApiResponse.empty();
         }else{
-           return new ApiResponse<>(200, "Consulta realizada exitosamente", listaComunidades);  
+           return ApiResponse.successList(listaComunidades);
         }
             
     }
@@ -36,9 +34,9 @@ public class ComunidadController {
     public ApiResponse<Comunidad> create(@RequestBody Comunidad nuevaComunidad) {
         try {
             Comunidad guardado = comunidadRepository.save(nuevaComunidad);
-            return new ApiResponse<>(200, "OK", guardado);
+            return ApiResponse.created(guardado);
         } catch (Exception e) {
-            return new ApiResponse<>(500, "Error", null);
+            return ApiResponse.error(e.toString());
         }
     }
     

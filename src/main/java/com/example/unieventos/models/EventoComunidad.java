@@ -22,6 +22,12 @@ public class EventoComunidad {
     public EventoComunidad() {
     }
 
+    public EventoComunidad(Evento evento, Comunidad comunidad) {
+        this.evento = evento;
+        this.comunidad = comunidad;
+    }
+
+
     public EventoComunidad(Integer id, Evento evento, Comunidad comunidad) {
         this.id = id;
         this.evento = evento;

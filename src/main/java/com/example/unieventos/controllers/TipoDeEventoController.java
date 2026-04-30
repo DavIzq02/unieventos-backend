@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/tipos-eventos")
+@CrossOrigin(origins = "*", allowedHeaders = "*") //permitir conexion de diferentes puertos
 public class TipoDeEventoController {
 
     private final TipoDeEventoRepository tEventoRepository;
@@ -22,9 +23,9 @@ public class TipoDeEventoController {
     public ApiResponse<TipoDeEvento> listar() {
         List<TipoDeEvento> listaTipos =  tEventoRepository.findAll();
         if(listaTipos.isEmpty()){
-            return new ApiResponse<>(400, "Sin Resultados", null);
+            return ApiResponse.empty();
         }else{
-            return new ApiResponse<>(200, "Consulta realizada exitosamente", listaTipos);
+            return ApiResponse.successList(listaTipos);
         }
 
     }
@@ -32,9 +33,9 @@ public class TipoDeEventoController {
     public ApiResponse<TipoDeEvento> create(@RequestBody TipoDeEvento nuevoTipoEvento) {
         try {
             TipoDeEvento guardado = tEventoRepository.save(nuevoTipoEvento);
-            return new ApiResponse<>(200, "OK", guardado);
+            return  ApiResponse.created(guardado);
         } catch (Exception e) {
-            return new ApiResponse<>(500, "Error", null);
+            return  ApiResponse.error(e.toString());
         }
     }
 

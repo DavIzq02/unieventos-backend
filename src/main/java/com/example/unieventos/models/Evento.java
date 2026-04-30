@@ -64,6 +64,8 @@ public class Evento {
         this.activo = activo;
     }
 
+    public Evento() {}
+
     public Boolean getActivo() {
         return activo;
     }

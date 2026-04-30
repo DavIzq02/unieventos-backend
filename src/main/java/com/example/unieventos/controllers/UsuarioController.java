@@ -19,8 +19,10 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("api/usuario")
 @CrossOrigin(origins = "*", allowedHeaders = "*") //permitir conexion de diferentes puertos
 public class UsuarioController {
+
     private final UsuarioRepository usuarioRepository;
     private final UsuarioService usuarioService;
+
     public UsuarioController(UsuarioRepository usuarioRepository,UsuarioService usuarioService)
     {
         this.usuarioRepository = usuarioRepository;
