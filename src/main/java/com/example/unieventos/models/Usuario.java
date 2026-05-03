@@ -54,6 +54,13 @@ public class Usuario {
         this.id = id;
     }
 
+    public Usuario(String nombre, String apellido, String correo, String codigo, String urlFoto) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.codigo = codigo;
+        this.urlFoto = urlFoto;
+    }
 
     public Integer getId() {
         return id;

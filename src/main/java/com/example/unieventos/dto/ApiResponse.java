@@ -24,6 +24,7 @@ public class ApiResponse<T> {
         switch (this.codigo) {
             case 200: this.mensaje = "Consulta realizada exitosamente"; break;
             case 201: this.mensaje = "Recurso creado exitosamente"; break;
+            case 202: this.mensaje = "Recurso eliminado exitosamente"; break;
             case 404: this.mensaje = "Consulta sin resultados"; break;
             case 500: this.mensaje = "Error interno del servidor"; break;
             default: this.mensaje = "Operación procesada"; break;
@@ -95,6 +96,10 @@ public class ApiResponse<T> {
 
     public static <T> ApiResponse<T> success(T data) {
         return new ApiResponse<>(200, data);
+    }
+
+    public static <T> ApiResponse<T> successDelete() {
+        return new ApiResponse<>(202);
     }
 
     public static <T> ApiResponse<T> successList(List<T> datos) {

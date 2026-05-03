@@ -40,4 +40,19 @@ public class EventoComunidadService {
         return listaCreada;
     }
 
+    public List<EventoComunidad> update(Integer id,List<Comunidad> listaComunidades){
+        Evento e = new Evento(id);
+        List<EventoComunidad> listaActualizada = new ArrayList<EventoComunidad>();
+        //Eliminamos todas las comunidades a las que estaba asignado el evento
+        repository.deleteEventoComunidadByEvento(e);
+        //Volvemos a crear la relacion
+        for(Comunidad c : listaComunidades){
+            EventoComunidad ec = new EventoComunidad(e,c);
+            repository.save(ec);
+            listaActualizada.add(ec);
+        }
+        return listaActualizada;
+    }
+
+
 }

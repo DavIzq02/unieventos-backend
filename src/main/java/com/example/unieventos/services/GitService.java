@@ -78,6 +78,30 @@ public class GitService {
         }
     }
 
+    public void deleteFile(String carpeta, String nombreArchivo) {
+        try {
+            String sha = obtenerShaArchivo(carpeta, nombreArchivo);
+
+            String url = "https://api.github.com/repos/" + repo + "/contents/" + carpeta + "/" + nombreArchivo;
+
+            Map<String, String> body = new HashMap<>();
+            body.put("message", "Delete old file: " + nombreArchivo);
+            body.put("sha", sha);
+
+            HttpHeaders headers = new HttpHeaders();
+            headers.setBearerAuth(token);
+            headers.setContentType(MediaType.APPLICATION_JSON);
+
+            HttpEntity<Map<String, String>> entity = new HttpEntity<>(body, headers);
+
+            RestTemplate restTemplate = new RestTemplate();
+            restTemplate.exchange(url, HttpMethod.DELETE, entity, String.class);
+
+        } catch (Exception e) {
+            System.out.println("No se pudo borrar archivo anterior: " + e.getMessage());
+        }
+    }
+
     public String obtenerShaArchivo(String carpeta, String nombreArchivo) {
         String tokenConfig = this.token;
         String repoConfig = this.repo;

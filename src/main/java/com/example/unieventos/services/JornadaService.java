@@ -23,6 +23,12 @@ public class JornadaService {
         return repository.saveAll(listaJornadas);
     }
 
+    public List<Jornada> updateJornadas(List<Jornada> listaJornadas){
+        repository.deleteByEvento(listaJornadas.get(0).getEvento());
+        listaJornadas.forEach(j -> j.setId(null));
+        return repository.saveAll(listaJornadas);
+    }
+
     public List<JornadaDTO> findByEvento(Evento evento){
         return repository.findJornadasByEvento(evento);
     }

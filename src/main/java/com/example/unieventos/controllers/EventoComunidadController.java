@@ -49,4 +49,20 @@ public class EventoComunidadController {
             return ApiResponse.error(e.toString());
         }
     }
+
+    @PutMapping("/update/{id}")
+    public ApiResponse<EventoComunidad> update(
+            @RequestBody List<Comunidad> listaComunidades,
+            @PathVariable Integer id) {
+        try {
+            List<EventoComunidad> listaCreada = service.update(id,listaComunidades);
+            if(listaCreada.isEmpty() || listaCreada == null){
+                return ApiResponse.empty();
+            }
+            return ApiResponse.createdLista(listaCreada);
+        } catch (Exception e) {
+            return ApiResponse.error(e.toString());
+        }
+    }
+
 }

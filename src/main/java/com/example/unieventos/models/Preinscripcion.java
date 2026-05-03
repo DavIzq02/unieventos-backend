@@ -18,6 +18,10 @@ public class Preinscripcion {
     @JoinColumn(name = "id_evento", nullable = false)
     private Evento evento;
 
+    public Preinscripcion(Integer id) {
+        this.id = id;
+    }
+
     public Preinscripcion() {
     }
 

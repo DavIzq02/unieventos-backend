@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.List;
 
 @RestController
@@ -23,6 +24,16 @@ public class EventoController {
 
     public EventoController(EventoService service){
         this.service = service;
+    }
+
+    @GetMapping("findById/{id}")
+    public ApiResponse<Evento> findEventoById(@PathVariable("id") Integer id) {
+        Evento evento =  service.findEventoById(id);
+        if(evento == null){
+            return ApiResponse.empty();
+        }else{
+            return ApiResponse.success(evento);
+        }
     }
 
     @GetMapping("listarEventosActivos")
@@ -73,13 +84,73 @@ public class EventoController {
         }
     }
 
-    @PostMapping("/updatePortadaEvento/{id}")
-    public ApiResponse<Evento> updatePortadaEvento(
+    @PostMapping("/upLoadPortadaEvento/{id}")
+    public ApiResponse<Evento> upLoadPortadaEvento(
             @PathVariable("id") Integer id,
             @RequestPart(value = "imagen", required = false) MultipartFile imagen
     ) throws IOException {
         try {
             service.upLoadPortadaEvento(id, imagen);
+            return ApiResponse.success(new Evento(id));
+        } catch (Exception e) {
+            return ApiResponse.error(e.toString());
+        }
+    }
+
+    @PutMapping("/inactivar/{id}")
+    public ApiResponse<Evento> inactivar(
+            @PathVariable("id") Integer id
+    ) throws IOException {
+        try {
+            String respuesta = service.inactivarEvento(id);
+            if(respuesta.equals("OK")){
+                return ApiResponse.successDelete();
+            }else{
+                return ApiResponse.error(respuesta);
+            }
+
+        } catch (Exception e) {
+            return ApiResponse.error(e.toString());
+        }
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ApiResponse<Evento> delete(
+            @PathVariable("id") Integer id
+    ) throws IOException {
+        try {
+            String respuesta = service.deleteEvento(id);
+            if(respuesta.equals("OK")){
+                return ApiResponse.successDelete();
+            }else{
+                return ApiResponse.error(respuesta);
+            }
+
+        } catch (Exception e) {
+            return ApiResponse.error(e.toString());
+        }
+    }
+
+    @PutMapping("update")
+    public ApiResponse<Evento> updateEvento(
+            @RequestBody Evento eventoModificado
+    ) {
+        try {
+            Evento nuevoEvento =  service.modificarEvento(eventoModificado);
+            return ApiResponse.created(nuevoEvento);
+
+        }catch (Exception e){
+            return  ApiResponse.error(e.toString());
+        }
+    }
+
+    @PutMapping("/updatePortadaEvento/{id}")
+    public ApiResponse<Evento> updatePortadaEvento(
+            @PathVariable("id") Integer id,
+            @RequestPart(value = "imagen", required = false) MultipartFile imagen
+    ) throws IOException {
+        try {
+            service.updatePortadaEvento(id, imagen);
             return ApiResponse.success(new Evento(id));
         } catch (Exception e) {
             return ApiResponse.error(e.toString());

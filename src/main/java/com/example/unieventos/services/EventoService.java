@@ -28,6 +28,10 @@ public class EventoService {
         this.repository = repository;
     }
 
+
+    public Evento findEventoById(Integer id){
+        return repository.findEventoById(id);
+    }
     public List<EventoDTO> listarEventosActivos(){
         return repository.findEventosActivos(LocalDateTime.now());
     }
@@ -86,14 +90,70 @@ public class EventoService {
     }
 
 
-    public Integer deleteEvento(Integer idEvento){
+    public String deleteEvento(Integer idEvento){
         Evento evento = new Evento(idEvento);
         try {
             repository.delete(evento);
-            return 200;
+            return "OK";
         } catch (Exception e) {
-            return 500;
+            return e.toString();
         }
+    }
+
+    public String inactivarEvento(Integer idEvento){
+        Evento evento = new Evento(idEvento);
+        try {
+            repository.inactivarEvento(evento);
+            return "OK";
+        } catch (Exception e) {
+            return e.toString();
+        }
+    }
+
+    public Evento modificarEvento(Evento eventoModificado) {
+
+        eventoModificado.setFechaDeModificacion(LocalDateTime.now());
+
+        return repository.save(eventoModificado);
+    }
+
+    public Integer updatePortadaEvento(Integer id, MultipartFile cargaUtil) throws IOException {
+
+        Evento evento = repository.findEventoById(id);
+
+        if (cargaUtil != null && !cargaUtil.isEmpty()) {
+            try {
+                String carpeta = "eventos";
+
+                String extension = "";
+                String nombreOriginal = cargaUtil.getOriginalFilename();
+
+                if (nombreOriginal != null && nombreOriginal.contains(".")) {
+                    extension = nombreOriginal.substring(nombreOriginal.lastIndexOf("."));
+                }
+
+                // borrar anterior
+                String nombreAnterior = extraerNombreArchivoDesdeUrl(evento.getUrlImagenPortada());
+                if (nombreAnterior != null) {
+                    gitService.deleteFile(carpeta, nombreAnterior);
+                }
+
+                // nuevo nombre único
+                String nombreArchivo = "portada_evento_" + id + "_" + System.currentTimeMillis() + extension;
+
+                String urlCdn = gitService.upLoadFile(carpeta, nombreArchivo, cargaUtil, false, "");
+
+                evento.setUrlImagenPortada(urlCdn);
+                repository.upLoadPortadaEvento(evento.getId(), urlCdn);
+
+            } catch (Exception e) {
+                throw new RuntimeException("Error actualizando la foto: " + e.getMessage());
+            }
+        } else {
+            throw new RuntimeException("Imagen no válida");
+        }
+
+        return 200;
     }
 
     public String extraerNombreArchivoDesdeUrl(String url) {

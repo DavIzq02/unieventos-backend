@@ -74,9 +74,9 @@ public class Evento {
         this.activo = activo;
     }
 
-    public Usuario getIdUsuarioCreador() {
-        return idUsuarioCreador;
-    }
+    //public Usuario getIdUsuarioCreador() {
+    //    return idUsuarioCreador;
+    //}
 
     public void setIdUsuarioCreador(Usuario idUsuarioCreador) {
         this.idUsuarioCreador = idUsuarioCreador;

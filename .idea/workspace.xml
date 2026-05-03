@@ -4,33 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf19ac75-dce1-4b31-9c5b-f512c805d36f" name="Changes" comment="+Modelado completo de la base de datos &#10;+CRUD completo de usuario &#10;+Servicio para inactivar usuario &#10;+Servicio para actualizar la foto de perfil del usuario &#10;+Division de logica del GitService">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/EventoComunidadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/EventoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/EventoInteresUsuarioController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/JornadaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/dto/EventoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/dto/JornadaDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/EventoInteresUsuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/EventoComunidadRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/EventoInteresUsuarioRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/EventoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/JornadaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/EventoComunidadService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/EventoInteresUsuarioService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/EventoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/JornadaService.java" afterDir="false" />
+    <list default="true" id="bf19ac75-dce1-4b31-9c5b-f512c805d36f" name="Changes" comment="+ Eventos : &#10;Nuevos servicios de creacion y consultas, y tablas intermedias">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/PreinscripcionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/PreinscripcionJornadaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/PreinscripcionJornadaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/PreinscripcionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/ComunidadService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/PreinscripcionJornadaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/PreinscripcionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/ComunidadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/ComunidadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/PermisoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/PermisoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/RolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/RolController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/TipoDeEventoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/TipoDeEventoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/EventoComunidadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/EventoComunidadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/EventoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/EventoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/JornadaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/JornadaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/dto/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/dto/ApiResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/dto/PayLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/dto/PayLoad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/Comunidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/Comunidad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/Evento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/EventoComunidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/EventoComunidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/UsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/Preinscripcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/Preinscripcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/ComunidadRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/ComunidadRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/EventoComunidadRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/EventoComunidadRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/EventoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/EventoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/JornadaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/JornadaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/EventoComunidadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/EventoComunidadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/EventoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/EventoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/GitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/GitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/JornadaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/JornadaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +41,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -101,8 +101,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.unieventos.services" />
       <recent name="com.example.unieventos.controllers" />
+      <recent name="com.example.unieventos.services" />
       <recent name="com.example.unieventos.repositories" />
       <recent name="com.example.unieventos.dto" />
       <recent name="com.example.unieventos.models" />
@@ -199,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776967562963</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="+ Eventos : &#10;Nuevos servicios de creacion y consultas, y tablas intermedias">
+      <option name="closed" value="true" />
+      <created>1777521209373</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1777521209373</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +265,7 @@
     <MESSAGE value="Se cambio el token de git" />
     <MESSAGE value="+Encriptacion de contraseña &#10;+Division de logica al cargar los archivos al repo de gir &#10;+Se aumenta el size de archivos que cargan por el post" />
     <MESSAGE value="+Modelado completo de la base de datos &#10;+CRUD completo de usuario &#10;+Servicio para inactivar usuario &#10;+Servicio para actualizar la foto de perfil del usuario &#10;+Division de logica del GitService" />
-    <option name="LAST_COMMIT_MESSAGE" value="+Modelado completo de la base de datos &#10;+CRUD completo de usuario &#10;+Servicio para inactivar usuario &#10;+Servicio para actualizar la foto de perfil del usuario &#10;+Division de logica del GitService" />
+    <MESSAGE value="+ Eventos : &#10;Nuevos servicios de creacion y consultas, y tablas intermedias" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ Eventos : &#10;Nuevos servicios de creacion y consultas, y tablas intermedias" />
   </component>
 </project>

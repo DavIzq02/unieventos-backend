@@ -43,4 +43,15 @@ public class JornadaController {
         }
     }
 
+    @PutMapping("/updateJornadas")
+    public ApiResponse<Jornada> updateJornadas(@RequestBody List <Jornada> listaJornadas) {
+        try {
+            List <Jornada> listaJornadasCreadas = service.updateJornadas(listaJornadas);
+            return  ApiResponse.createdLista(listaJornadasCreadas);
+        } catch (Exception e) {
+            return  ApiResponse.error(e.toString());
+        }
+    }
+
+
 }

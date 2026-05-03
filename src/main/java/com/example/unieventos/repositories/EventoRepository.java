@@ -77,4 +77,14 @@ public interface EventoRepository extends JpaRepository<Evento, Integer>{
     """)
     void upLoadPortadaEvento(@Param("id") Integer id,
                             @Param("url") String url);
+
+    @Modifying
+    @Transactional
+    @Query("""
+        UPDATE Evento e 
+        SET e.activo = false 
+        WHERE e = :ev
+    """)
+    void inactivarEvento(Evento ev);
+
 }

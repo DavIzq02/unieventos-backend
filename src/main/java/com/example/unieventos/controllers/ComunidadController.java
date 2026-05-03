@@ -6,6 +6,7 @@ import com.example.unieventos.models.Comunidad;
 import com.example.unieventos.repositories.ComunidadRepository;
 import java.util.List;
 
+import com.example.unieventos.services.ComunidadService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController //Convierte a Json
@@ -13,15 +14,15 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*", allowedHeaders = "*") //permitir conexion de diferentes puertos
 public class ComunidadController {
     
-    private final ComunidadRepository comunidadRepository;
+    private final ComunidadService service;
 
-    public ComunidadController(ComunidadRepository comunidadRepository) {
-        this.comunidadRepository = comunidadRepository;
+    public ComunidadController(ComunidadService service) {
+        this.service = service;
     }
 
     @GetMapping("listAll")
     public ApiResponse<Comunidad> listar() {
-        List<Comunidad> listaComunidades =  comunidadRepository.findAll();
+        List<Comunidad> listaComunidades =  service.listarComunidades();
         if(listaComunidades.isEmpty()){
             return ApiResponse.empty();
         }else{
@@ -29,11 +30,24 @@ public class ComunidadController {
         }
             
     }
-    
+
+    @GetMapping("listarbyEvento/{id}")
+    public ApiResponse<Comunidad> listarbyEvento(
+            @PathVariable("id") Integer idEvento
+    ) {
+        List<Comunidad> listaComunidades =  service.listarbyEvento(idEvento);
+        if(listaComunidades.isEmpty()){
+            return ApiResponse.empty();
+        }else{
+            return ApiResponse.successList(listaComunidades);
+        }
+
+    }
+
     @PostMapping("/create")
     public ApiResponse<Comunidad> create(@RequestBody Comunidad nuevaComunidad) {
         try {
-            Comunidad guardado = comunidadRepository.save(nuevaComunidad);
+            Comunidad guardado = service.guardarComunidad(nuevaComunidad);
             return ApiResponse.created(guardado);
         } catch (Exception e) {
             return ApiResponse.error(e.toString());
