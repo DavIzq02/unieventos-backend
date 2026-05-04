@@ -32,7 +32,14 @@ public interface EventoComunidadRepository extends JpaRepository<EventoComunidad
         FROM EventoComunidad ec
         JOIN ec.evento e
         JOIN e.tipoDeEvento te
-        WHERE ec.comunidad = :comunidad AND e.activo = true
+        WHERE ec.comunidad = :comunidad AND e.activo = true 
+            GROUP BY e.id,
+            e.nombre,
+            e.descripcion,
+            e.fechaDeApertura,
+            e.fechaDeFinalizacion,
+            e.urlImagenPortada,
+            te.nombre
     """)
     List<EventoDTO> findEventosByComunidad(@Param("comunidad") Comunidad comunidad);
 
