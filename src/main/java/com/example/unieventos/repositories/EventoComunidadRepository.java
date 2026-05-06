@@ -27,19 +27,31 @@ public interface EventoComunidadRepository extends JpaRepository<EventoComunidad
             e.fechaDeApertura,
             e.fechaDeFinalizacion,
             e.urlImagenPortada,
-            te.nombre
+            te.nombre,
+            e.codigo,
+            e.requiereInscripcion,
+            e.codigoDinamico,
+            e.requiereCodigo,
+            e.abierto,
+            e.revisarPreinscritos
         )
         FROM EventoComunidad ec
         JOIN ec.evento e
         JOIN e.tipoDeEvento te
         WHERE ec.comunidad = :comunidad AND e.activo = true 
-            GROUP BY e.id,
-            e.nombre,
-            e.descripcion,
-            e.fechaDeApertura,
-            e.fechaDeFinalizacion,
-            e.urlImagenPortada,
-            te.nombre
+        GROUP BY e.id,
+        e.nombre,
+        e.descripcion,
+        e.fechaDeApertura,
+        e.fechaDeFinalizacion,
+        e.urlImagenPortada,
+        te.nombre,
+        e.codigo,
+        e.requiereInscripcion,
+        e.codigoDinamico,
+        e.requiereCodigo,
+        e.abierto,
+        e.revisarPreinscritos
     """)
     List<EventoDTO> findEventosByComunidad(@Param("comunidad") Comunidad comunidad);
 

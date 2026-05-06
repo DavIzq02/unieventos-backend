@@ -27,11 +27,30 @@ public interface EventoRepository extends JpaRepository<Evento, Integer>{
         e.fechaDeApertura,
         e.fechaDeFinalizacion,
         e.urlImagenPortada,
-        te.nombre
+        te.nombre,
+        e.codigo,
+        e.requiereInscripcion,
+        e.codigoDinamico,
+        e.requiereCodigo,
+        e.abierto,
+        e.revisarPreinscritos
     )
     FROM Evento e
     JOIN e.tipoDeEvento te
     WHERE e.fechaDeApertura > :fechaActual AND e.activo = true
+    GROUP BY e.id,
+        e.nombre,
+        e.descripcion,
+        e.fechaDeApertura,
+        e.fechaDeFinalizacion,
+        e.urlImagenPortada,
+        te.nombre,
+        e.codigo,
+        e.requiereInscripcion,
+        e.codigoDinamico,
+        e.requiereCodigo,
+        e.abierto,
+        e.revisarPreinscritos
     """)
     List<EventoDTO> findEventosProximos(@Param("fechaActual") LocalDateTime fechaActual);
 
@@ -43,11 +62,30 @@ public interface EventoRepository extends JpaRepository<Evento, Integer>{
         e.fechaDeApertura,
         e.fechaDeFinalizacion,
         e.urlImagenPortada,
-        te.nombre
+        te.nombre,
+        e.codigo,
+        e.requiereInscripcion,
+        e.codigoDinamico,
+        e.requiereCodigo,
+        e.abierto,
+        e.revisarPreinscritos
     )
     FROM Evento e
     JOIN e.tipoDeEvento te
     WHERE :fechaActual BETWEEN e.fechaDeApertura AND e.fechaDeFinalizacion AND e.activo = true
+    GROUP BY e.id,
+        e.nombre,
+        e.descripcion,
+        e.fechaDeApertura,
+        e.fechaDeFinalizacion,
+        e.urlImagenPortada,
+        te.nombre,
+        e.codigo,
+        e.requiereInscripcion,
+        e.codigoDinamico,
+        e.requiereCodigo,
+        e.abierto,
+        e.revisarPreinscritos
     """)
     List<EventoDTO> findEventosActivos(@Param("fechaActual") LocalDateTime fechaActual);
 
@@ -59,7 +97,13 @@ public interface EventoRepository extends JpaRepository<Evento, Integer>{
         e.fechaDeApertura,
         e.fechaDeFinalizacion,
         e.urlImagenPortada,
-        te.nombre
+        te.nombre,
+        e.codigo,
+        e.requiereInscripcion,
+        e.codigoDinamico,
+        e.requiereCodigo,
+        e.abierto,
+        e.revisarPreinscritos
     )
     FROM Evento e
     JOIN e.tipoDeEvento te

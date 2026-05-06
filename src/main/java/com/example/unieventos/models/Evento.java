@@ -46,6 +46,25 @@ public class Evento {
     @Column(nullable = false)
     private Boolean activo;
 
+    @Column(nullable = false)
+    private String codigo;
+
+    @Column(name = "requiere_inscripcion", nullable = false)
+    private Boolean requiereInscripcion;
+
+    @Column(name = "codigo_dinamico", nullable = false)
+    private Boolean codigoDinamico;
+
+    @Column(name = "requiere_codigo", nullable = false)
+    private Boolean requiereCodigo;
+
+    @Column(name = "abierto", nullable = false)
+    private Boolean abierto;
+
+    @Column(name = "revisar_preinscritos", nullable = false)
+    private Boolean revisarPreinscritos;
+
+
     public Evento(Integer id) {
         this.id = id;
     }
@@ -62,6 +81,26 @@ public class Evento {
         this.fechaDeModificacion = fechaDeModificacion;
         this.idUsuarioCreador = idUsuarioCreador;
         this.activo = activo;
+    }
+
+    public Evento(Integer id, Boolean revisarPreinscritos, Boolean abierto, Boolean requiereCodigo, Boolean codigoDinamico, Boolean requiereInscripcion, String codigo, Boolean activo, Usuario idUsuarioCreador, LocalDateTime fechaDeModificacion, LocalDateTime fechaDeCreacion, String urlImagenPortada, LocalDateTime fechaDeFinalizacion, LocalDateTime fechaDeApertura, TipoDeEvento tipoDeEvento, String descripcion, String nombre) {
+        this.id = id;
+        this.revisarPreinscritos = revisarPreinscritos;
+        this.abierto = abierto;
+        this.requiereCodigo = requiereCodigo;
+        this.codigoDinamico = codigoDinamico;
+        this.requiereInscripcion = requiereInscripcion;
+        this.codigo = codigo;
+        this.activo = activo;
+        this.idUsuarioCreador = idUsuarioCreador;
+        this.fechaDeModificacion = fechaDeModificacion;
+        this.fechaDeCreacion = fechaDeCreacion;
+        this.urlImagenPortada = urlImagenPortada;
+        this.fechaDeFinalizacion = fechaDeFinalizacion;
+        this.fechaDeApertura = fechaDeApertura;
+        this.tipoDeEvento = tipoDeEvento;
+        this.descripcion = descripcion;
+        this.nombre = nombre;
     }
 
     public Evento() {}
@@ -152,5 +191,57 @@ public class Evento {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+//    public Usuario getIdUsuarioCreador() {
+//        return idUsuarioCreador;
+//    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public Boolean getRequiereInscripcion() {
+        return requiereInscripcion;
+    }
+
+    public void setRequiereInscripcion(Boolean requiereInscripcion) {
+        this.requiereInscripcion = requiereInscripcion;
+    }
+
+    public Boolean getCodigoDinamico() {
+        return codigoDinamico;
+    }
+
+    public void setCodigoDinamico(Boolean codigoDinamico) {
+        this.codigoDinamico = codigoDinamico;
+    }
+
+    public Boolean getRequiereCodigo() {
+        return requiereCodigo;
+    }
+
+    public void setRequiereCodigo(Boolean requiereCodigo) {
+        this.requiereCodigo = requiereCodigo;
+    }
+
+    public Boolean getAbierto() {
+        return abierto;
+    }
+
+    public void setAbierto(Boolean abierto) {
+        this.abierto = abierto;
+    }
+
+    public Boolean getRevisarPreinscritos() {
+        return revisarPreinscritos;
+    }
+
+    public void setRevisarPreinscritos(Boolean revisarPreinscritos) {
+        this.revisarPreinscritos = revisarPreinscritos;
     }
 }

@@ -22,7 +22,13 @@ public interface EventoInteresUsuarioRepository extends JpaRepository<EventoInte
         e.fechaDeApertura,
         e.fechaDeFinalizacion,
         e.urlImagenPortada,
-        te.nombre
+        te.nombre,
+        e.codigo,
+        e.requiereInscripcion,
+        e.codigoDinamico,
+        e.requiereCodigo,
+        e.abierto,
+        e.revisarPreinscritos
     )
     FROM Evento e
     JOIN e.tipoDeEvento te

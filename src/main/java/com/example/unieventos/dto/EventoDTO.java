@@ -26,6 +26,13 @@ public class EventoDTO {
     private Boolean activo;
     private String nombreCreador;
     private String nombreTipoEvento;
+    private String codigo;
+    private Boolean requiereInscripcion;
+    private Boolean codigoDinamico;
+    private Boolean requiereCodigo;
+    private Boolean abierto;
+    private Boolean revisarPreinscritos;
+
     public EventoDTO() {
     }
 
@@ -36,7 +43,13 @@ public EventoDTO( Integer id ,
                   LocalDateTime fechaDeApertura ,
                   LocalDateTime fechaDeFinalizacion,
                   String urlImagenPortada,
-                  String nombreTipoEvento){
+                  String nombreTipoEvento,
+                  String codigo,
+                  Boolean requiereInscripcion,
+                  Boolean codigoDinamico,
+                  Boolean requiereCodigo,
+                  Boolean abierto,
+                  Boolean revisarPreinscritos){
 
         this.id = id;
         this.nombre = nombre;
@@ -45,6 +58,12 @@ public EventoDTO( Integer id ,
         this.fechaDeFinalizacion = fechaDeFinalizacion;
         this.urlImagenPortada = urlImagenPortada;
         this.nombreTipoEvento = nombreTipoEvento;
+        this.codigo = codigo;
+        this.requiereInscripcion = requiereInscripcion;
+        this.codigoDinamico = codigoDinamico;
+        this.requiereCodigo = requiereCodigo;
+        this.abierto = abierto;
+        this.revisarPreinscritos = revisarPreinscritos;
 }
 
     public Integer getId() {
@@ -149,5 +168,53 @@ public EventoDTO( Integer id ,
 
     public void setActivo(Boolean activo) {
         this.activo = activo;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public Boolean getRequiereInscripcion() {
+        return requiereInscripcion;
+    }
+
+    public void setRequiereInscripcion(Boolean requiereInscripcion) {
+        this.requiereInscripcion = requiereInscripcion;
+    }
+
+    public Boolean getCodigoDinamico() {
+        return codigoDinamico;
+    }
+
+    public void setCodigoDinamico(Boolean codigoDinamico) {
+        this.codigoDinamico = codigoDinamico;
+    }
+
+    public Boolean getRequiereCodigo() {
+        return requiereCodigo;
+    }
+
+    public void setRequiereCodigo(Boolean requiereCodigo) {
+        this.requiereCodigo = requiereCodigo;
+    }
+
+    public Boolean getAbierto() {
+        return abierto;
+    }
+
+    public void setAbierto(Boolean abierto) {
+        this.abierto = abierto;
+    }
+
+    public Boolean getRevisarPreinscritos() {
+        return revisarPreinscritos;
+    }
+
+    public void setRevisarPreinscritos(Boolean revisarPreinscritos) {
+        this.revisarPreinscritos = revisarPreinscritos;
     }
 }
