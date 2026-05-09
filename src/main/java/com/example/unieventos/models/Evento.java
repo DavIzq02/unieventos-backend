@@ -103,6 +103,27 @@ public class Evento {
         this.nombre = nombre;
     }
 
+    public Evento ( Integer id,
+                    LocalDateTime fechaDeApertura,
+                    LocalDateTime fechaDeFinalizacion,
+                    String codigo,
+                    Boolean requiereInscripcion,
+                    Boolean codigoDinamico,
+                    Boolean requiereCodigo,
+                    Boolean abierto,
+                    Boolean revisarPreinscritos,
+                    Boolean activo){
+            this.id = id ;
+            this.fechaDeApertura = fechaDeApertura ;
+            this.fechaDeFinalizacion = fechaDeFinalizacion ;
+            this.codigo = codigo ;
+            this.requiereInscripcion = requiereInscripcion ;
+            this.codigoDinamico = codigoDinamico ;
+            this.requiereCodigo = requiereCodigo ;
+            this.abierto = abierto ;
+            this.revisarPreinscritos = revisarPreinscritos ;
+            this.activo = activo ;
+    }
     public Evento() {}
 
     public Boolean getActivo() {

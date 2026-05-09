@@ -131,4 +131,22 @@ public interface EventoRepository extends JpaRepository<Evento, Integer>{
     """)
     void inactivarEvento(Evento ev);
 
+    @Query("""
+    SELECT new com.example.unieventos.models.Evento(
+        e.id,
+        e.fechaDeApertura,
+        e.fechaDeFinalizacion,
+        e.codigo,
+        e.requiereInscripcion,
+        e.codigoDinamico,
+        e.requiereCodigo,
+        e.abierto,
+        e.revisarPreinscritos,
+        e.activo
+    )
+    FROM Evento e
+    WHERE e = :evento
+    """)
+    Evento findConfigEvento(@Param("evento") Evento evento);
+
 }

@@ -30,4 +30,13 @@ public interface PreinscripcionJornadaRepository extends JpaRepository<Preinscri
     List<Usuario> findUsuariosByJornada(@Param("jornada") Jornada jornada);
 
     List<PreinscripcionJornada> findByPreinscripcion(Preinscripcion preinscripcion);
+
+    @Query("""
+        SELECT COUNT(pj) > 0
+        FROM PreinscripcionJornada pj
+        JOIN pj.preinscripcion p
+        JOIN p.usuario u
+        WHERE pj.jornada = :jornada AND p.usuario = :usuario
+        """)
+    boolean findPreinscripcionByUsuario(@Param("jornada") Jornada jornada, @Param("usuario") Usuario usuario);
 }

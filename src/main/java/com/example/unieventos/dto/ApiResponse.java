@@ -49,7 +49,10 @@ public class ApiResponse<T> {
         this.listaRespuesta = listaRespuesta;
     }
 
-
+    public ApiResponse(Integer codigo, String mensaje) {
+        this.codigo = codigo;
+        this.mensaje = mensaje;
+    }
     
     public ApiResponse(Integer codigo, String mensaje, T data) {
         this.codigo = codigo;
@@ -114,6 +117,9 @@ public class ApiResponse<T> {
         return new ApiResponse<>(201, datos);
     }
 
+    public static <T> ApiResponse<T> noDataValue(Integer codigo,String mensaje) {
+        return new ApiResponse<>(codigo, mensaje);
+    }
 
     public static <T> ApiResponse<T> error(String mensaje) {
         return new ApiResponse<>(500, mensaje, null);
