@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf19ac75-dce1-4b31-9c5b-f512c805d36f" name="Changes" comment="+ Eventos : &#10;Se agregaron mas propiedades del evento">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/AsistenciaEventoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/dto/AsistenciaEventoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/AsistenciaEvento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/AsistenciaEventoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/AsistenciaEventoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/dto/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/dto/ApiResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/Evento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/EventoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/EventoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/PreinscripcionJornadaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/PreinscripcionJornadaRepository.java" afterDir="false" />
+    <list default="true" id="bf19ac75-dce1-4b31-9c5b-f512c805d36f" name="Changes" comment="+Asistencia &#10;&#10;Logica de asistencia por QR">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +45,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2,
@@ -215,7 +206,31 @@
       <option name="project" value="LOCAL" />
       <updated>1778070337462</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="+Asistencia &#10;&#10;Logica de asistencia por QR">
+      <option name="closed" value="true" />
+      <created>1778337360957</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1778337360957</updated>
+    </task>
+    <task id="LOCAL-00010" summary="+Asistencia &#10;&#10;Logica de asistencia por QR">
+      <option name="closed" value="true" />
+      <created>1778337412320</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1778337412320</updated>
+    </task>
+    <task id="LOCAL-00011" summary="+Asistencia &#10;&#10;Logica de asistencia por QR">
+      <option name="closed" value="true" />
+      <created>1778337563754</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1778337563754</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +300,7 @@
     <MESSAGE value="+ Eventos : &#10;Crud completo &#10;logica de inscribirse a los eventos" />
     <MESSAGE value="+ Eventos : &#10;Se agrupan los eventos por comunidad para que no salgan duplicados" />
     <MESSAGE value="+ Eventos : &#10;Se agregaron mas propiedades del evento" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ Eventos : &#10;Se agregaron mas propiedades del evento" />
+    <MESSAGE value="+Asistencia &#10;&#10;Logica de asistencia por QR" />
+    <option name="LAST_COMMIT_MESSAGE" value="+Asistencia &#10;&#10;Logica de asistencia por QR" />
   </component>
 </project>
