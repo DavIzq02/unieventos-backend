@@ -43,12 +43,7 @@ public class UsuarioController {
     
     @PostMapping("/create") //Opcion crear desde el administrador
     public ApiResponse<Usuario> create(@RequestBody Usuario nuevoUsuario) {
-        try {
-            Usuario guardado = usuarioService.crearUsuario(nuevoUsuario);
-            return new ApiResponse<>(200, "OK", guardado);
-        } catch (Exception e) {
-            return new ApiResponse<>(500, e.getMessage(), null);
-        }
+            return usuarioService.crearUsuario(nuevoUsuario);
     }
     
     @GetMapping("/{id}")

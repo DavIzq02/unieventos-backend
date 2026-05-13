@@ -1,10 +1,7 @@
 package com.example.unieventos.services;
 
 import com.example.unieventos.dto.ApiResponse;
-import com.example.unieventos.models.AsistenciaEvento;
-import com.example.unieventos.models.Evento;
-import com.example.unieventos.models.Preinscripcion;
-import com.example.unieventos.models.Usuario;
+import com.example.unieventos.models.*;
 import com.example.unieventos.repositories.AsistenciaEventoRepository;
 import com.example.unieventos.repositories.EventoRepository;
 import com.example.unieventos.repositories.PreinscripcionJornadaRepository;
@@ -67,6 +64,11 @@ public class AsistenciaEventoService {
                 }
             }
 
+            if(infoEvento.getRequiereCodigo()){
+                if(!(infoEvento.getCodigo().equals(asistencia.getEvento().getCodigo()))){
+                    return ApiResponse.noDataValue(500,"El código del evento no coincide ");
+                }
+            }
             nuevaAsistencia = repository.save(asistencia);
 
             //Aqui si el evento tiene codigo dinamico lo cambiamos
@@ -78,6 +80,10 @@ public class AsistenciaEventoService {
         }
 
 
+    }
+
+    public List<Usuario> listarUsuariosByJornada(Jornada jornada){
+        return repository.findAsistenciaByJornada(jornada);
     }
 
     public List<Usuario> findAsistenciaJornada(AsistenciaEvento asistencia){

@@ -62,6 +62,18 @@ public class Usuario {
         this.urlFoto = urlFoto;
     }
 
+    public Usuario(String nombre, String apellido, String correo, String codigo, String urlFoto,String nombreComunidad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.codigo = codigo;
+        this.urlFoto = urlFoto;
+
+        this.comunidad = new Comunidad();
+        this.comunidad.setNombre(nombreComunidad);
+    }
+
+
     public Integer getId() {
         return id;
     }

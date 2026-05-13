@@ -124,4 +124,8 @@ public class ApiResponse<T> {
     public static <T> ApiResponse<T> error(String mensaje) {
         return new ApiResponse<>(500, mensaje, null);
     }
+
+    public static <T> ApiResponse<T> objectExiste(String mensaje,T objetoExistente) {
+        return new ApiResponse<>(501, mensaje, objetoExistente);
+    }
 }

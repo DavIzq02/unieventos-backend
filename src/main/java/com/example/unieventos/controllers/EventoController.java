@@ -157,4 +157,20 @@ public class EventoController {
         }
     }
 
+    @PutMapping("/iniciar/{id}")
+    public ApiResponse<Evento> iniciarEvento(
+            @PathVariable("id") Integer id
+    ) throws IOException {
+        try {
+            String respuesta = service.iniciarEvento(id);
+            if(respuesta.equals("OK")){
+                return ApiResponse.successDelete();
+            }else{
+                return ApiResponse.error(respuesta);
+            }
+
+        } catch (Exception e) {
+            return ApiResponse.error(e.toString());
+        }
+    }
 }

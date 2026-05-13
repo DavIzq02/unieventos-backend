@@ -109,6 +109,16 @@ public class EventoService {
             return e.toString();
         }
     }
+    public String iniciarEvento(Integer idEvento){
+        Evento evento = new Evento(idEvento);
+        try {
+            repository.iniciarEvento(evento);
+            return "OK";
+        } catch (Exception e) {
+            return e.toString();
+        }
+    }
+
 
     public Evento modificarEvento(Evento eventoModificado) {
 

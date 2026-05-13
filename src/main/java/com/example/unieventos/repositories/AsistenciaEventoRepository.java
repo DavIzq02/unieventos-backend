@@ -34,12 +34,30 @@ public interface AsistenciaEventoRepository extends JpaRepository<AsistenciaEven
     @Query("""
         SELECT COUNT(ec) > 0
         FROM EventoComunidad ec
-        JOIN Usuario u ON u.comunidad.id = ec.comunidad.id
+        JOIN ec.comunidad c
+        JOIN Usuario u on u.comunidad = c
         WHERE ec.evento = :evento
         AND u = :usuario
     """)
     boolean usuarioPerteneceAComunidadEvento(
             @Param("evento") Evento evento,
             @Param("usuario") Usuario usuario);
+
+
+    @Query("""
+    SELECT new com.example.unieventos.models.Usuario(
+        u.nombre,
+        u.apellido,
+        u.correo,
+        u.codigo,
+        u.urlFoto,
+        c.nombre)
+    FROM AsistenciaEvento ae
+    JOIN ae.usuario u 
+    JOIN u.comunidad c
+    WHERE ae.jornada = :jornada
+    """)
+    List<Usuario> findAsistenciaByJornada(@Param("jornada") Jornada jornada);
+
 
 }

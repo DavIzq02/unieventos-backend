@@ -1,5 +1,6 @@
 package com.example.unieventos.services;
 
+import com.example.unieventos.dto.ApiResponse;
 import com.example.unieventos.models.Rol;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,22 +27,31 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public Usuario crearUsuario(Usuario nuevoUsuario) {
+    public ApiResponse<Usuario> crearUsuario(Usuario nuevoUsuario) {
+        try {
+            Optional<Usuario> usuarioExistente;
+            usuarioExistente = usuarioRepository.findByCodigo(nuevoUsuario.getCodigo());
+            if (usuarioExistente.isPresent()) {
+                return ApiResponse.objectExiste("El código ya está registrado",new Usuario(usuarioExistente.get().getId()));
+            }
 
-        if (nuevoUsuario.getNombre() == null || nuevoUsuario.getNombre().isEmpty()) {
-            throw new RuntimeException("El nombre es obligatorio");
+            usuarioExistente = usuarioRepository.findByCorreo(nuevoUsuario.getCorreo());
+            if (usuarioExistente.isPresent()) {
+                return ApiResponse.objectExiste("El correo ya está registrado",new Usuario(usuarioExistente.get().getId()));
+            }
+
+            nuevoUsuario.setActivo(true);
+            nuevoUsuario.setUrlFoto("not defined");
+            nuevoUsuario.setFechaDeCreacion(LocalDateTime.now());
+            String passwordHash = passwordEncoder.encode(nuevoUsuario.getContrasena());
+            nuevoUsuario.setContrasena(passwordHash);
+
+            usuarioRepository.save(nuevoUsuario);
+            return ApiResponse.success(nuevoUsuario);
+        } catch (Exception e) {
+            return ApiResponse.error(e.toString());
         }
 
-        if (nuevoUsuario.getCorreo() == null || nuevoUsuario.getCorreo().isEmpty()) {
-            throw new RuntimeException("El correo es obligatorio");
-        }
-        nuevoUsuario.setActivo(true);
-        nuevoUsuario.setUrlFoto("not defined");
-        nuevoUsuario.setFechaDeCreacion(LocalDateTime.now());
-        String passwordHash = passwordEncoder.encode(nuevoUsuario.getContrasena());
-        nuevoUsuario.setContrasena(passwordHash);
-
-        return usuarioRepository.save(nuevoUsuario);
     }
 
     public Usuario updateUsuario(Usuario usuarioModificado){
