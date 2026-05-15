@@ -1,6 +1,7 @@
 package com.example.unieventos.services;
 
 import com.example.unieventos.dto.ApiResponse;
+import com.example.unieventos.dto.EventoDTO;
 import com.example.unieventos.models.*;
 import com.example.unieventos.repositories.AsistenciaEventoRepository;
 import com.example.unieventos.repositories.EventoRepository;
@@ -88,5 +89,9 @@ public class AsistenciaEventoService {
 
     public List<Usuario> findAsistenciaJornada(AsistenciaEvento asistencia){
         return repository.findAsistenciaByEventoJornada(asistencia.getEvento(),asistencia.getJornada());
+    }
+
+    public List<EventoDTO> findAsistenciaByUsuario(Usuario usuario){
+        return repository.findAsistenciaByUsuario(usuario,LocalDateTime.now());
     }
 }

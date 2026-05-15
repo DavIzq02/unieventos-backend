@@ -28,7 +28,7 @@ public class QrController {
         String token = seguridadService.generarToken(data);
         String serverProd = "https://davizq02.github.io/unieventos-frontend";
         String serverLocal = "http://localhost:4200";
-        String url = serverProd+"/#/asistencia/?e="+ eventoId+ "&j="+jornadaId+ "&ts=" + ts+ "&tk=" + token + "&c="+codigo;
+        String url = serverLocal+"/#/asistencia/?e="+ eventoId+ "&j="+jornadaId+ "&ts=" + ts+ "&tk=" + token + "&c="+codigo;
 
         byte[] qr = qrService.generarQR(url);
 

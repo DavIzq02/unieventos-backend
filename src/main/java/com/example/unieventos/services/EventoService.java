@@ -1,21 +1,16 @@
 package com.example.unieventos.services;
 
 import com.example.unieventos.dto.EventoDTO;
-import com.example.unieventos.models.Comunidad;
 import com.example.unieventos.models.Evento;
-import com.example.unieventos.models.Rol;
 import com.example.unieventos.models.Usuario;
 import com.example.unieventos.repositories.EventoRepository;
-import com.example.unieventos.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class EventoService {
@@ -113,6 +108,16 @@ public class EventoService {
         Evento evento = new Evento(idEvento);
         try {
             repository.iniciarEvento(evento);
+            return "OK";
+        } catch (Exception e) {
+            return e.toString();
+        }
+    }
+
+    public String cerrarEvento(Integer idEvento){
+        Evento evento = new Evento(idEvento);
+        try {
+            repository.cerrarEvento(evento);
             return "OK";
         } catch (Exception e) {
             return e.toString();

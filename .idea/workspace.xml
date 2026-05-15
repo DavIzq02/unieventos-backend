@@ -4,19 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf19ac75-dce1-4b31-9c5b-f512c805d36f" name="Changes" comment="+Asistencia &#10;&#10;Logica de asistencia por QR">
+    <list default="true" id="bf19ac75-dce1-4b31-9c5b-f512c805d36f" name="Changes" comment="+Rest &#10;Mejoras en los servicios y logica de QR">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/AsistenciaEventoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/AsistenciaEventoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/EventoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/EventoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/QrController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/QrController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/dto/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/dto/ApiResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/models/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/AsistenciaEventoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/AsistenciaEventoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/EventoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/EventoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/AsistenciaEventoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/AsistenciaEventoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/EventoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/EventoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/services/UsuarioService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -257,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778337857673</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="+Rest &#10;Mejoras en los servicios y logica de QR">
+      <option name="closed" value="true" />
+      <created>1778671918545</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1778671918545</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +332,7 @@
     <MESSAGE value="+ Eventos : &#10;Se agrupan los eventos por comunidad para que no salgan duplicados" />
     <MESSAGE value="+ Eventos : &#10;Se agregaron mas propiedades del evento" />
     <MESSAGE value="+Asistencia &#10;&#10;Logica de asistencia por QR" />
-    <option name="LAST_COMMIT_MESSAGE" value="+Asistencia &#10;&#10;Logica de asistencia por QR" />
+    <MESSAGE value="+Rest &#10;Mejoras en los servicios y logica de QR" />
+    <option name="LAST_COMMIT_MESSAGE" value="+Rest &#10;Mejoras en los servicios y logica de QR" />
   </component>
 </project>

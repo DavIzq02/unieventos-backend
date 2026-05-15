@@ -1,5 +1,6 @@
 package com.example.unieventos.repositories;
 
+import com.example.unieventos.dto.EventoDTO;
 import com.example.unieventos.models.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -58,6 +59,31 @@ public interface AsistenciaEventoRepository extends JpaRepository<AsistenciaEven
     WHERE ae.jornada = :jornada
     """)
     List<Usuario> findAsistenciaByJornada(@Param("jornada") Jornada jornada);
+
+
+    @Query("""
+    SELECT new com.example.unieventos.dto.EventoDTO(
+            e.id,
+            e.nombre,
+            e.descripcion,
+            e.fechaDeApertura,
+            e.fechaDeFinalizacion,
+            e.urlImagenPortada,
+            te.nombre,
+            e.codigo,
+            e.requiereInscripcion,
+            e.codigoDinamico,
+            e.requiereCodigo,
+            e.abierto,
+            e.revisarPreinscritos
+        )
+    FROM AsistenciaEvento ae 
+    JOIN ae.evento e
+    JOIN e.tipoDeEvento te
+    WHERE ae.usuario = :jornada AND (:fechaActual > e.fechaDeFinalizacion OR e.abierto = false)
+    """)
+    List<EventoDTO> findAsistenciaByUsuario(@Param("usuario") Usuario usuario, @Param("fechaActual") LocalDateTime fechaActual);
+
 
 
 }

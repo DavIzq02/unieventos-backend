@@ -164,7 +164,7 @@ public class EventoController {
         try {
             String respuesta = service.iniciarEvento(id);
             if(respuesta.equals("OK")){
-                return ApiResponse.successDelete();
+                return ApiResponse.success(new Evento(id));
             }else{
                 return ApiResponse.error(respuesta);
             }
@@ -173,4 +173,21 @@ public class EventoController {
             return ApiResponse.error(e.toString());
         }
     }
+    @PutMapping("/cerrar/{id}")
+    public ApiResponse<Evento> cerrar(
+            @PathVariable("id") Integer id
+    ) throws IOException {
+        try {
+            String respuesta = service.cerrarEvento(id);
+            if(respuesta.equals("OK")){
+                return ApiResponse.success(new Evento(id));
+            }else{
+                return ApiResponse.error(respuesta);
+            }
+
+        } catch (Exception e) {
+            return ApiResponse.error(e.toString());
+        }
+    }
+
 }

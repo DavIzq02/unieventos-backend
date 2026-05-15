@@ -135,6 +135,16 @@ public interface EventoRepository extends JpaRepository<Evento, Integer>{
     @Transactional
     @Query("""
         UPDATE Evento e 
+        SET e.abierto = false 
+        WHERE e = :ev
+    """)
+    void cerrarEvento(Evento ev);
+
+
+    @Modifying
+    @Transactional
+    @Query("""
+        UPDATE Evento e 
         SET e.activo = false 
         WHERE e = :ev
     """)

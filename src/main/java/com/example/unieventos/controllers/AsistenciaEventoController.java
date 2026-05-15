@@ -1,6 +1,7 @@
 package com.example.unieventos.controllers;
 
 import com.example.unieventos.dto.ApiResponse;
+import com.example.unieventos.dto.EventoDTO;
 import com.example.unieventos.models.AsistenciaEvento;
 import com.example.unieventos.models.Jornada;
 import com.example.unieventos.models.Usuario;
@@ -27,8 +28,7 @@ public class AsistenciaEventoController {
         return service.createAsistenciaEvento(datosAsistencia);
     }
 
-
-        @PostMapping("listarByJornada")
+    @PostMapping("listarByJornada")
     public ApiResponse<Usuario> listarUsuariosByJornada(
             @RequestBody Jornada jornada
     ) {
@@ -38,7 +38,19 @@ public class AsistenciaEventoController {
         }else{
             return ApiResponse.successList(listaUsuarios);
         }
-
     }
+
+    @PostMapping("findAsistenciaByUsuario")
+    public ApiResponse<EventoDTO> findAsistenciaByUsuario(
+            @RequestBody Usuario usuario
+    ) {
+        List<EventoDTO> listaEventos =  service.findAsistenciaByUsuario(usuario);
+        if(listaEventos.isEmpty()){
+            return ApiResponse.empty();
+        }else{
+            return ApiResponse.successList(listaEventos);
+        }
+    }
+
 
 }
