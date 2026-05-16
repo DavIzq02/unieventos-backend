@@ -1,9 +1,7 @@
 
 package com.example.unieventos.dto;
 
-import com.example.unieventos.models.Evento;
-import com.example.unieventos.models.TipoDeEvento;
-import com.example.unieventos.models.Usuario;
+import com.example.unieventos.models.*;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 
@@ -32,24 +30,56 @@ public class EventoDTO {
     private Boolean requiereCodigo;
     private Boolean abierto;
     private Boolean revisarPreinscritos;
+    private Integer idAsistencia;
 
     public EventoDTO() {
     }
 
     //Este es el constructor que esta usando el repositorio
-public EventoDTO( Integer id ,
-                  String nombre ,
-                  String descripcion ,
-                  LocalDateTime fechaDeApertura ,
-                  LocalDateTime fechaDeFinalizacion,
-                  String urlImagenPortada,
-                  String nombreTipoEvento,
-                  String codigo,
-                  Boolean requiereInscripcion,
-                  Boolean codigoDinamico,
-                  Boolean requiereCodigo,
-                  Boolean abierto,
-                  Boolean revisarPreinscritos){
+    public EventoDTO( Integer id ,
+                      String nombre ,
+                      String descripcion ,
+                      LocalDateTime fechaDeApertura ,
+                      LocalDateTime fechaDeFinalizacion,
+                      String urlImagenPortada,
+                      String nombreTipoEvento,
+                      String codigo,
+                      Boolean requiereInscripcion,
+                      Boolean codigoDinamico,
+                      Boolean requiereCodigo,
+                      Boolean abierto,
+                      Boolean revisarPreinscritos){
+
+            this.id = id;
+            this.nombre = nombre;
+            this.descripcion = descripcion;
+            this.fechaDeApertura = fechaDeApertura;
+            this.fechaDeFinalizacion = fechaDeFinalizacion;
+            this.urlImagenPortada = urlImagenPortada;
+            this.nombreTipoEvento = nombreTipoEvento;
+            this.codigo = codigo;
+            this.requiereInscripcion = requiereInscripcion;
+            this.codigoDinamico = codigoDinamico;
+            this.requiereCodigo = requiereCodigo;
+            this.abierto = abierto;
+            this.revisarPreinscritos = revisarPreinscritos;
+    }
+
+
+    public EventoDTO( Integer id ,
+                      String nombre ,
+                      String descripcion ,
+                      LocalDateTime fechaDeApertura ,
+                      LocalDateTime fechaDeFinalizacion,
+                      String urlImagenPortada,
+                      String nombreTipoEvento,
+                      String codigo,
+                      Boolean requiereInscripcion,
+                      Boolean codigoDinamico,
+                      Boolean requiereCodigo,
+                      Boolean abierto,
+                      Boolean revisarPreinscritos,
+                      Integer idAsistencia){
 
         this.id = id;
         this.nombre = nombre;
@@ -64,7 +94,8 @@ public EventoDTO( Integer id ,
         this.requiereCodigo = requiereCodigo;
         this.abierto = abierto;
         this.revisarPreinscritos = revisarPreinscritos;
-}
+        this.idAsistencia = idAsistencia;
+    }
 
     public Integer getId() {
         return id;
@@ -217,4 +248,13 @@ public EventoDTO( Integer id ,
     public void setRevisarPreinscritos(Boolean revisarPreinscritos) {
         this.revisarPreinscritos = revisarPreinscritos;
     }
+
+    public Integer getIdAsistencia() {
+        return idAsistencia;
+    }
+
+    public void setIdAsistencia(Integer idAsistencia) {
+        this.idAsistencia = idAsistencia;
+    }
 }
+

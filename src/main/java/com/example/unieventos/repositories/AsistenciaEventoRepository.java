@@ -75,12 +75,13 @@ public interface AsistenciaEventoRepository extends JpaRepository<AsistenciaEven
             e.codigoDinamico,
             e.requiereCodigo,
             e.abierto,
-            e.revisarPreinscritos
+            e.revisarPreinscritos,
+            ae.id
         )
     FROM AsistenciaEvento ae 
     JOIN ae.evento e
     JOIN e.tipoDeEvento te
-    WHERE ae.usuario = :jornada AND (:fechaActual > e.fechaDeFinalizacion OR e.abierto = false)
+    WHERE ae.usuario = :usuario AND (:fechaActual > e.fechaDeFinalizacion OR e.abierto = false)
     """)
     List<EventoDTO> findAsistenciaByUsuario(@Param("usuario") Usuario usuario, @Param("fechaActual") LocalDateTime fechaActual);
 
