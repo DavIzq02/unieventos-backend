@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf19ac75-dce1-4b31-9c5b-f512c805d36f" name="Changes" comment="+Esquema de Reseñas y Multimedia de reseñas">
+    <list default="true" id="bf19ac75-dce1-4b31-9c5b-f512c805d36f" name="Changes" comment=":Logica de asistencia de eventos correcciones en el DTO de eventos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/QrController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/controllers/QrController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/dto/EventoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/dto/EventoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/AsistenciaEventoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/unieventos/repositories/AsistenciaEventoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,21 +59,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.UnieventosApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Admin/Desktop/Unieventos/backend",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.qodana"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.UnieventosApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/Unieventos/backend&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.qodana&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.unieventos.controllers" />
@@ -265,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778872068587</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary=":Logica de asistencia de eventos correcciones en el DTO de eventos">
+      <option name="closed" value="true" />
+      <created>1778907584971</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1778907584971</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,7 +343,8 @@
     <MESSAGE value="+Asistencia &#10;&#10;Logica de asistencia por QR" />
     <MESSAGE value="+Rest &#10;Mejoras en los servicios y logica de QR" />
     <MESSAGE value="+Esquema de Reseñas y Multimedia de reseñas" />
-    <option name="LAST_COMMIT_MESSAGE" value="+Esquema de Reseñas y Multimedia de reseñas" />
+    <MESSAGE value=":Logica de asistencia de eventos correcciones en el DTO de eventos" />
+    <option name="LAST_COMMIT_MESSAGE" value=":Logica de asistencia de eventos correcciones en el DTO de eventos" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
